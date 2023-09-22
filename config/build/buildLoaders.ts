@@ -16,7 +16,6 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
             {
                 loader: 'css-loader',
                 options: {
-                    url: true,
                     modules: {
                         auto: (resPath: string) => { return Boolean(resPath.includes('.module.')); },
                         localIdentName: options.isDev

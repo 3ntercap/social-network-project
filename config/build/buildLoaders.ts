@@ -16,8 +16,9 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
             {
                 loader: 'css-loader',
                 options: {
+                    url: true,
                     modules: {
-                        auto: (resPath: string) => Boolean(resPath.includes('.module.')),
+                        auto: (resPath: string) => { return Boolean(resPath.includes('.module.')); },
                         localIdentName: options.isDev
                             ? '[path][name]__[local]--[hash:base64:5]'
                             : '[hash:base64:8]',
@@ -39,6 +40,9 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
         use: [
             {
                 loader: 'file-loader',
+                options: {
+                    publicPath: '/',
+                },
             },
         ],
     };

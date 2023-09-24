@@ -5,8 +5,6 @@ interface LoaderProps {
     className?: string;
 }
 
-export const Loader = ({ className }: LoaderProps) => {
-    return (
-        <span className={classNames('loader', {}, [className])} />
-    );
-};
+export const Loader = ({ className }: LoaderProps) => (
+    <span className={classNames('loader', {}, [className])} />
+);

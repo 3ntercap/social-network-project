@@ -8,9 +8,8 @@
 }
 
 .links {
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
     margin-left: auto;
-}
-
-.mainLink {
-    margin-right: 20px;
 }

@@ -1,5 +1,6 @@
-import { classNames } from 'shared/lib/helpers/classNames/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import React, { ReactNode, useCallback, useEffect } from 'react';
+import { useTheme } from 'app/providers/ThemeProvider';
 import cls from './Modal.module.scss';
 
 interface ModalProps {
@@ -12,6 +13,7 @@ interface ModalProps {
 export const Modal = ({
     className, children, isOpen, onClose,
 }: ModalProps) => {
+    const { theme } = useTheme();
     const closeHandler = useCallback(() => {
         if (onClose) {
             onClose();
